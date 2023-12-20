@@ -25,3 +25,18 @@ rm Package\ Control.sublime-settings
 git fetch
 git checkout -t origin/master
 ```
+
+# Manual actions
+
+#
+# Set unsaved view name
+
+- Open Command Palette
+- Type `PRV:` and select `PackageResourceViewer: Open Resource`
+- Select `Default`
+- Select `set_unsaved_view_name.py`
+- Find `if syntax != 'Packages/Text/Plain text.tmLanguage'`:
+- Select from there to the end of the `if` statement (the first return statement) (Python is indentation based) inclusive `return` to be commented out.
+- Go to the Edit menu -> Comment -> Toggle Comment
+- Save the file
+- Ensure that, in your preferences (user, syntax specific etc.), `set_unsaved_view_name` is not set to `false`
