@@ -1,0 +1,17 @@
+{
+	"enabled": true,
+	"settings": {
+        // Debug R Language Server
+        "r.lsp.debug": false,
+        // Enable Diagnostics
+        "r.lsp.diagnostics": true,
+        // Disable rich markdown based documentation
+        "r.lsp.rich_documentation": true,
+    },
+  "command": [
+        "R",
+        "--slave",
+        "-e",
+        "languageserver::run()"
+    ]
+}

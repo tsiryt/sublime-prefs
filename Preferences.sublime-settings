@@ -1,0 +1,17 @@
+{
+	"color_scheme": "Packages/Agila Theme/Agila Dracula.tmTheme",
+	"dark_color_scheme": "Packages/Color Scheme - Default/Breakers.sublime-color-scheme",
+	"light_color_scheme": "Packages/Color Scheme - Default/Breakers.sublime-color-scheme",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	// Configuration perso pour que des onglets non sauvegardes puissent avoir un nom
+	"set_unsaved_view_name":true,
+	"font_size": 14,
+	"theme": "Agila Dracula.sublime-theme",
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"close_windows_when_empty": false,
+	"index_files": true,
+}
