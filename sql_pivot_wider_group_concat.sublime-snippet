@@ -1,0 +1,51 @@
+<snippet>
+  <content><![CDATA[
+-- variables
+name_from = ${1}
+value_from = ${2}
+tablename = ${3}
+grouping = ${4}
+-- Set GROUP_CONTACT Max Length
+SET
+  SESSION group_concat_max_len = 100000;
+-- Create GROUP_CONTACT Statement
+SET
+  @sql = (
+      SELECT
+        GROUP_CONCAT(
+          DISTINCT CONCAT(
+            "MAX(CASE WHEN ${1} = '",
+            ${1},
+            "' THEN ${2} ELSE NULL END) AS '",
+            ${1},
+            "'"
+          )
+        )
+      FROM
+        ${3}
+      where 
+        1=1
+  );
+
+-- Create the Complete SQL Statement
+SET
+  @pivot_statement = CONCAT(
+    "SELECT ${4},",
+    @sql,
+    " FROM ${3} GROUP BY ${4} ORDER BY ${4} ASC"
+  );
+-- Prepare and Execute
+PREPARE 
+  complete_pivot_statement
+FROM
+  @pivot_statement;
+EXECUTE 
+  complete_pivot_statement;
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>sql-pivot-gc</tabTrigger>
+  <!-- Optional: Description to show in the menu -->
+  <description>SQL statements to execute pivot_wider</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope>source.python</scope> -->
+</snippet>

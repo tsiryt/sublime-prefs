@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+library(data.table)
+library(dplyr)
+library(tidyr)
+library(lubridate)
+library(purrr)
+library(tsibble)
+library(ggplot2)
+library(glue)
+library(readr)
+library(stringr)
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>r-common-libs</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope>source.python</scope> -->
+</snippet>
