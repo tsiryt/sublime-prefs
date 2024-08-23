@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+%>%
+filter(if_any(everything(), is.na)) %>%
+select(where(anyNA))
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>focus-na</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope>source.R</scope> -->
+  <description>select every row/col that has at least an NA</description>
+</snippet>

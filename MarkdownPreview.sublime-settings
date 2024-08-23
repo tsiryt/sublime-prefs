@@ -1,0 +1,8 @@
+{
+	"browser":"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+	"enable_mathjax":true,
+	"js": [
+    "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js",
+            "res://MarkdownPreview/js/math_config.js",
+    ]
+}

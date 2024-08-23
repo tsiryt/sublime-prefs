@@ -1,0 +1,9 @@
+{
+	"clients":
+	{
+		"erlang-ls":
+		{
+			"enabled": true
+		}
+	}
+}
