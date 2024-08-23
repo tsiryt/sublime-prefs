@@ -1,0 +1,23 @@
+{
+	"color_scheme": "Packages/Agila Theme/Agila Dracula.tmTheme",
+	"ignored_packages":
+	[
+		"BracketHighlighter",
+		"LSP",
+		"MarkdownEditing",
+		"Pretty JSON",
+		"Terminus",
+		"Vintage",
+	],
+	"font_size": 11,
+	// Nommer les onglets non sauvegardes
+	"set_unsaved_view_name":true,
+	"theme": "Agila Dracula.sublime-theme",
+	"detect_indentation" : false,
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "close_windows_when_empty": false,
+  "index_files": false,
+  // Ignore ces caracteres utilises par PlainTasks
+  "ignored_words": [ "☐", "✔", "✘", "✄" ,"＿"]
+}

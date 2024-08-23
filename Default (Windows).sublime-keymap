@@ -1,0 +1,120 @@
+[
+	{
+        "keys": ["ctrl+alt+enter"], "command": "send_code",
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "source" }
+        ]
+    },{
+         "keys": ["ctrl+super+alt+t"], "command": "terminus_open", "args": {
+             "cwd": "${file_path:${folder}}"
+         }
+    },
+    { "keys": ["ctrl+k", "ctrl+n"], "command": "set_name_of_unsaved_buffer" },
+    // Select text between brackets
+    {
+        "no_outside_adj": null,
+        "keys": ["ctrl+alt+s"],
+        "command": "bh_key",
+        "args":
+        {
+            "lines" : true,
+            "plugin":
+            {
+                "command": "bh_modules.bracketselect"
+            }
+        }
+    },
+    // Fold contents between brackets
+    {
+        "keys": ["ctrl+alt+f"],
+        "command": "bh_key",
+        "args":
+        {
+            "plugin": {
+                "command" : "bh_modules.foldbracket"
+            }
+        }
+    },
+    // Keyboard interrupt
+    { 
+        "keys": ["ctrl+c"],
+        "command": "terminus_keypress",
+        "args": {"key": "c", "ctrl": true},
+        "context": [{"key": "terminus_view"}] 
+    },
+    { 
+        "keys": ["ctrl+shift+m"],
+        "command": "insert_snippet",
+        "args": {"name": "Packages/User/r_pipe.sublime-snippet"}},
+    { 
+        "keys": ["ctrl+k", "ctrl+r"],
+        "command": "rainbow_brackets_controller",
+        "args": {"action": "make rainbow"}
+    },
+    // Caractere non present dans Terminus
+    { "keys": ["up"], "command": "terminus_keypress", "args": {"key": "up"}, "context": [{"key": "terminus_view"}] },
+    { "keys": ["down"], "command": "terminus_keypress", "args": {"key": "down"}, "context": [{"key": "terminus_view"}] },
+    { "keys": ["("], "command": "terminus_keypress", "args": {"key": "("}, "context": [{"key": "terminus_view"}] },
+    { "keys": ["delete"], "command": "terminus_keypress", "args": {"key": "delete"}, "context": [{"key": "terminus_view"}] },
+    { "keys": ["backspace"], "command": "terminus_keypress", "args": {"key": "backspace"}, "context": [{"key": "terminus_view"}] },
+    { "keys": ["escape"], "command": "terminus_keypress", "args": {"key": "escape"},
+        "context": [
+            { "key": "terminus_view" },
+            { "key": "terminus_view.finished", "operator": "not_equal", "operand": true },
+            { "key": "overlay_visible", "operator": "equal", "operand": false },
+            { "key": "popup_visible", "operator": "equal", "operand": false }
+        ] },
+    { "keys": ["ctrl+c"], "command": "terminus_keypress", "args": {"key": "c", "ctrl": true}, "context": [{"key": "terminus_view"}] },
+    {
+    "keys": ["ctrl+alt+super+t"],
+    "command": "terminus_open",
+    "args": {
+      "config_name": "Default",
+      "cwd": "${file_path:${folder}}"
+    },
+    "context": [
+      { "key": "terminus_view", "operator": "not_equal", "operand": true },
+    ]
+  },
+  { "keys": ["ctrl+super+i"], "command": "copy_path" },
+  // git diff helper 
+  { "keys": ["ctrl+alt+g"], "command": "git_diff_helper"},
+  { "keys": ["ctrl+shift+m"], "command": "insert_snippet", "args": {"name": "Packages/User/r_pipe.sublime-snippet"}},
+  // rainbow brackets
+  { "keys": ["ctrl+k", "ctrl+r"], "command": "rainbow_brackets_controller",  "args": {"action": "make rainbow"}},
+  { "keys": ["ctrl+alt+0"], "command": "insert",  "args": {"characters": "@"}},
+  // PlainTasks
+  { "keys": ["ctrl+d"], "command": "plain_tasks_complete","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }]},
+  { "keys": ["alt+c"], "command": "plain_tasks_cancel", "context": [{"key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["ctrl+enter"], "command": "plain_tasks_new","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["ctrl+i"], "command": "plain_tasks_new","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["ctrl+shift+enter"], "command": "plain_tasks_new_with_date","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["ctrl+shift+a"], "command": "plain_tasks_archive","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["ctrl+shift+o"], "command": "plain_tasks_archive_org","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["ctrl+shift+u"], "command": "plain_tasks_open_url","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["alt+o"], "command": "plain_tasks_open_link","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["ctrl+shift+r"], "command": "plain_tasks_goto_tag", "context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["f4"], "command": "plain_tasks_inject_due_date","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["f5"], "command": "plain_tasks_sort_by_due_date_and_priority","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+  { "keys": ["f7"], "command": "plain_tasks_sort_by_due_date_and_priority","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }], "args": {"descending": true} },
+  { "keys": ["tab"], "command": "plain_task_insert_date", "context":
+    [
+      { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+      { "key": "selector", "operator": "equal", "operand": "text.todo" },
+      { "key": "preceding_text", "operator": "regex_contains", "operand": "(@started|@toggle|@created)(?!\\([\\d\\w,\\.:\\-\/ @]*\\))", "match_all": true }
+    ]
+  },
+  { "keys": ["tab"], "command": "plain_tasks_replace_short_date", "context":
+    [
+      { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+      { "key": "selector", "operator": "equal", "operand": "text.todo" },
+      { "key": "preceding_text", "operator": "regex_contains", "operand": "@due\\([^\\)]+(?!.*?\\))", "match_all": true },
+      { "key": "following_text", "operator": "regex_contains", "operand": "[ \t]*\\)", "match_all": true }
+    ]
+  },
+  { "keys": ["tab"], "command": "plain_tasks_re_calculate_time_for_tasks", "context":
+    [
+      { "key": "selector", "operator": "equal", "operand": "text.todo meta.tag.todo.completed, text.todo meta.tag.todo.cancelled" }
+    ]
+  }
+]
