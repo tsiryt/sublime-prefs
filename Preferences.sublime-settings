@@ -4,7 +4,6 @@
 	[
 		"BracketHighlighter",
 		"LSP",
-		"MarkdownEditing",
 		"Pretty JSON",
 		"Terminus",
 		"Vintage",
@@ -19,5 +18,5 @@
   "close_windows_when_empty": false,
   "index_files": false,
   // Ignore ces caracteres utilises par PlainTasks
-  "ignored_words": [ "☐", "✔", "✘", "✄" ,"＿"]
+  "ignored_words": [ "☐", "✔", "✘", "✄","＿"],
 }

@@ -32,7 +32,6 @@
 	[
 		"BracketHighlighter",
 		"LSP",
-		"MarkdownEditing",
 		"Pretty JSON",
 		"Terminus",
 	],
