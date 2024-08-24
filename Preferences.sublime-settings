@@ -1,11 +1,7 @@
 {
 	"color_scheme": "Packages/Agila Theme/Agila Dracula.tmTheme",
 	"ignored_packages":
-	[
-		"BracketHighlighter",
-		"LSP",
-		"Pretty JSON",
-		"Terminus",
+	[		
 		"Vintage",
 	],
 	"font_size": 11,
